@@ -1,14 +1,14 @@
 
-
+let Circle
 function setup() {
-
   createCanvas( windowWidth, windowHeight, P2D)
-
+  Circle = new DotCircle
+  Circle.MakePoints()
 }
 
 function draw() {
-  // background("cream")
-
+  background("cream")
+  Circle.Draw()
 }
 
 function DotCircle() {
@@ -18,8 +18,8 @@ function DotCircle() {
   
   this.MakePoints = () => {
       // I got this from http://bl.ocks.org/bycoffe/3404776
-    let radius = random(100, 400),
-    num_points = 180,
+    let radius = 111,
+    num_points = 111,
     angle = 0, 
     x = 0,
     y = 0,
@@ -41,10 +41,9 @@ function DotCircle() {
   }
 
   this.Draw = () => {
-
     for (let index = 0; index < allPoints.length; index++) {
       const point = allPoints[index];
-      fill(51)
+      fill("black")
       circle(point.x, point.y, 2)
     }
   }
